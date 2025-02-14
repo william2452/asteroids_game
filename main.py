@@ -32,12 +32,12 @@ def main():
             if event.type == pygame.QUIT:
                 return
         updatable.update(dt)
-        for astroid in asteroids:
-            if astroid.check_collision(player):
+        for asteroid in asteroids:
+            if asteroid.check_collision(player):
                 sys.exit("Game over!")
             for shot in shots:
-                if astroid.check_collision(shot):
-                    astroid.split()
+                if asteroid.check_collision(shot):
+                    asteroid.split()
                     shot.kill()
             
         screen.fill("black")
